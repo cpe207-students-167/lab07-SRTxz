@@ -3,7 +3,7 @@ const firstNameInput = document.querySelector("#first-name-input");
 const lastNameInput = document.querySelector("#last-name-input");
 const emailInput = document.querySelector("#email-input");
 const passwordInput = document.querySelector("#password-input");
-const confirmPasswordInput = document.querySelector("#confirm-password-input");
+const confirmPasswordInput = document.querySelector("#password-confirm-input");
 
 // create reference for buttons.
 const submitBtn = document.querySelector("#submit-btn");
@@ -86,7 +86,7 @@ submitBtn.onclick = () => {
   }
 
   // validate confirm password
-  if (passwordInput.value < 6 && passwordInput.value !== confirmPasswordInput.value) {
+  if (passwordInput.value < 6 || passwordInput.value !== confirmPasswordInput.value) {
     confirmPasswordInput.classList.add("is-invalid");
   } else {
     confirmPasswordInput.classList.add("is-valid");
